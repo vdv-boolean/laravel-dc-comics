@@ -1,6 +1,7 @@
 @extends('comics')
 
 @section('contents')
+<h1>Inserisci Nuovo Film Comics!</h1>
 <form method="POST" action="{{ route('comics.store') }}">
   @csrf
 

@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Comic;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,11 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-        $comics = config('comics');
-        foreach ($comics as $arrComics) {
-            Comic::create($arrComics);
-        }
-        
+        $this->call([
+            ComicsTableSeeder::class,
+        ]);
     }
 }
